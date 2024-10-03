@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>GUESS A NUMBER</title>
+  </head>
+  <body>
+    <h1 class="game-title">ИГРА УГАДАЙ ЧИСЛО</h1>
+    <div class="game__error hidden" id="error">
+      <p class="game__error-text" id="error-text"></p>
+    </div>
+
+    <form class="game__form game__form--number-range" id="form-guessed-number">
+      <label class="game__label" for="input-guessed-min-number">
+        Загаданное число будет в диапазоне от
+        <input
+          class="game__input"
+          id="input-guessed-min-number"
+          type="text"
+          value=""
+        />
+      </label>
+      <label class="game__label" for="input-guessed-max-number">
+        до
+        <input
+          class="game__input"
+          id="input-guessed-max-number"
+          type="text"
+          value=""
+        />
+      </label>
+      <button
+        class="game__button game__button--submit"
+        type="submit"
+        id="button-guessed-number"
+      >
+        ЗАГАДАТЬ ЧИСЛО
+      </button>
+    </form>
+    <form class="game__form game__form--guess hidden" id="form-guess-number">
+      <p class="game__guess-range" id="guess-range"></p>
+      <p class="game__count" id="count"></p>
+      <label class="game__label" for="input-guess-number">
+        Ваш вариант:
+        <input
+          class="game__input"
+          id="input-guess-number"
+          type="text"
+          value=""
+        />
+      </label>
+      <button class="game__button game__button--check" type="submit">
+        Проверить
+      </button>
+    </form>
+    <div class="game__result hidden" id="result">
+      <div class="game__result--ending hidden" id="ending-result">
+        <p class="game__ending-text" id="ending-text"></p>
+        <button
+          class="game__button game__button--reset"
+          type="button"
+          id="reset-button"
+        >
+          Начать сначала?
+        </button>
+      </div>
+      <div class="game__result--bad hidden" id="bad-result">
+        <p class="game__message">
+          К сожалению, Вы не угадали! Хотите получить подсказу?
+        </p>
+        <div class="game__buttons">
+          <button
+            class="game__button game__button--yes"
+            type="button"
+            id="yes-button"
+          >
+            ДА
+          </button>
+          <button
+            class="game__button game__button--no"
+            type="button"
+            id="no-button"
+          >
+            НЕТ
+          </button>
+        </div>
+        <p class="game__hint" id="hint"></p>
+      </div>
+    </div>
+  </body>
+  <script src="/index.js"></script>
+</html>
